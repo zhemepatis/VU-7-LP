@@ -1,0 +1,9 @@
+intakas(neris, nemunas).
+intakas(merkys, nemunas).
+intakas(nevezis, nemunas).
+intakas(sesupe, nemunas).
+intakas(zeimena, neris).
+intakas(sventoji, neris).
+intakas(vilnele, neris).
+intakas(jara, sventoji).
+
