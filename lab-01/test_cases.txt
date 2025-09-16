@@ -1,0 +1,47 @@
+seserys(aivars, aina).
+false: aivars yra brolis
+
+seserys(aina, vita).
+false: aina ir vita yra puseseres
+
+seserys(aina, arina).
+true
+
+===
+
+dede(martins, aina).
+false: martins yra ainos senelis
+
+dede(dana, aivars).
+false: dana yra aivaro teta
+
+dede(jans, kristaps).
+true: dede is mamos puses
+
+dede(lauris, ulrika).
+true: dede is tecio puses
+
+===
+
+gera_pora(darta, reinis).
+false - nera pora
+
+gera_pora(darta, martins).
+false - skirtingi pomegiai
+
+gera_pora(upe, klints).
+false - skirtingas amzius
+
+gera_pora(solveiga, reinis).
+true
+
+===
+
+trys_draugai(jans, upe, klints).
+false - skirtingas amzius
+
+trys_draugai(ulrika, kristaps, aina).
+false - skirtingi pomegiai
+
+trys_draugai(darta, solveiga, reinis).
+true

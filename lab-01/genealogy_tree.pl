@@ -1,7 +1,6 @@
-% seserys(Sesuo1, Sesuo2) - Asmenys Sesuo1 ir Sesuo2 yra seserys;
-% dede(Dede, SunenasDukterecia) - Pirmasis asmuo (Dede) yra antrojo (SunenasDukterecia) dėdė (tėčio ar mamos brolis);
-% trys_draugai(Draugas1, Draugas2, Draugas3) - Asmenys Draugas1, Draugas2 ir Draugas3 yra panašaus amžiaus ir turi tą patį pomėgį;
-% gera_pora(Asmuo1, Asmuo2) - Asmenys Asmuo1 ir Asmuo2 yra panašaus amžiaus ir turi tą patį pomėgį;
+% Gabrielė Rinkevičiūtė
+% Informatika 4 k., 2 gr.
+% Variantai: 7, 10, 39, 42
 
 % asmenys
 asmuo(darta, moteris, 67, muzika).
@@ -54,12 +53,27 @@ mama(upe, laime).
 mama(upe, kristaps).
 
 % predikatai
+moteris(A) :- asmuo(A, moteris, _, _).
+vyras(A) :- asmuo(A, vyras, _, _).
+
 tetis(T, A) :- mama(M, A), pora(T, M).
 
 brolis_ar_sesuo(A1, A2) :- mama(M, A1), mama(M, A2), A1 \= A2.
-sesuo(S, A) :- brolis_ar_sesuo(S, A), asmuo(S, moteris, _, _).
-brolis(B, A) :- brolis_ar_sesuo(B, A), asmuo(B, vyras, _, _).
-seserys(S1, S2) :- sesuo(S1, S2), asmuo(S2, moteris, _, _).
+sesuo(S, A) :- brolis_ar_sesuo(S, A), moteris(S).
+brolis(B, A) :- brolis_ar_sesuo(B, A), vyras(B).
+seserys(S1, S2) :- sesuo(S1, S2), moteris(S2).
 
-dede(D, A) :- mama(M, A), brolis(D, M), !.
+dede(D, A) :- mama(M, A), brolis(D, M).
 dede(D, A) :- tetis(T, A), brolis(D, T).
+
+panasaus_amziaus(A1, A2) :- asmuo(A1, _, AM1, _), asmuo(A2, _, AM2, _), A1 \= A2, abs(AM1 - AM2) < 5.
+
+gera_pora(A1, A2) :- pora(A1, A2), panasaus_amziaus(A1, A2), asmuo(A1, _, _, P), asmuo(A2, _, _, P).
+
+trys_draugai(A1, A2, A3) :- 
+    panasaus_amziaus(A1, A2), 
+    panasaus_amziaus(A2, A3), 
+    panasaus_amziaus(A1, A3), 
+    asmuo(A1, _, _, P),
+    asmuo(A2, _, _, P),
+    asmuo(A3, _, _, P).
