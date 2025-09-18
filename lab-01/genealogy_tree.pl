@@ -67,13 +67,14 @@ dede(D, A) :- mama(M, A), brolis(D, M).
 dede(D, A) :- tetis(T, A), brolis(D, T).
 
 panasaus_amziaus(A1, A2) :- asmuo(A1, _, AM1, _), asmuo(A2, _, AM2, _), A1 \= A2, abs(AM1 - AM2) < 5.
+tas_pats_pomegis(A1, A2) :- asmuo(A1, _, _, P), asmuo(A2, _, _, P).
 
-gera_pora(A1, A2) :- pora(A1, A2), panasaus_amziaus(A1, A2), asmuo(A1, _, _, P), asmuo(A2, _, _, P).
+gera_pora(A1, A2) :- pora(A1, A2), panasaus_amziaus(A1, A2), tas_pats_pomegis(A1, A2).
 
 trys_draugai(A1, A2, A3) :- 
     panasaus_amziaus(A1, A2), 
     panasaus_amziaus(A2, A3), 
     panasaus_amziaus(A1, A3), 
-    asmuo(A1, _, _, P),
-    asmuo(A2, _, _, P),
-    asmuo(A3, _, _, P).
+    tas_pats_pomegis(A1, A2),
+    tas_pats_pomegis(A2, A3),
+    tas_pats_pomegis(A1, A3).
