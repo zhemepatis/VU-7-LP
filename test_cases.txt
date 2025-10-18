@@ -24,4 +24,4 @@ Miestas1 = sialiai, Miestsas2 = panevezys.
 ===
 
 galima_pasiekti(vilnius, kaunas, Atstumas).
-false / error - nėra nurodytas atstumo limitas. 
+false / error - nėra nurodytas atstumo limitas
