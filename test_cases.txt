@@ -1,8 +1,8 @@
 seserys(aivars, aina).
-false: aivars yra brolis
+false - aivars yra brolis
 
 seserys(aina, vita).
-false: aina ir vita yra puseseres
+false - aina ir vita yra puseseres
 
 seserys(aina, arina).
 true
@@ -10,16 +10,16 @@ true
 ===
 
 dede(martins, aina).
-false: martins yra ainos senelis
+false - martins yra ainos senelis
 
 dede(dana, aivars).
-false: dana yra aivaro teta
+false - dana yra aivaro teta
 
 dede(jans, kristaps).
-true: dede is mamos puses
+true - dede is mamos puses
 
 dede(lauris, ulrika).
-true: dede is tecio puses
+true - dede is tecio puses
 
 ===
 
