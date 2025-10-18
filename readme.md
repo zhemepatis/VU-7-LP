@@ -1,1 +1,0 @@
-I hope someday there will be descent readme file
