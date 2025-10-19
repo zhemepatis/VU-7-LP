@@ -1,27 +1,46 @@
-galima_pasiekti(vilnius, panevezys, 120).
-false - tiek važiuojant tiesiai iš Vilniaus, tiek per Šiaulius, pasitaiko kelias viršyjantis 120 km atstumą
+multiplication(2, 3, 6).
+true
 
-galima_pasiekti(vilnius, panevezys, 140).
-true - važiuojant tiesiai iš Vilniaus galima pasiekti Panevėžį neviršyjant 140 km atstumo
+multiplication(3, 2, 6).
+true
 
-galima_pasiekti(vilnius, panevezys, 150).
-true - neviršyjant 150 km atstumo, Panevėžį galima pasiekti per tiesiogiai iš Vilniaus arba važiuojant per Šiaulius
-
-===
-
-galima_pasiekti(vilnius, Miestas, 120).
-Miestas = utena.
-Miestas = kaunas.
-Miestas = alytus.
-Miestas = marijampole.
+multiplication(3, 2, 7).
+false
 
 ===
 
-galima_pasiekti(Miestas1, Miestas2, 100).
-Miestas1 = kaunas, Miestsas2 = marijampole.
-Miestas1 = sialiai, Miestsas2 = panevezys.
+multiplication(-2, 3, -6).
+true
+
+multiplication(3, -2, -6).
+true
+
+multiplication(3, -2, 6).
+false
 
 ===
 
-galima_pasiekti(vilnius, kaunas, Atstumas).
-false / error - nėra nurodytas atstumo limitas. 
+multiplication(-2, -3, 6).
+true
+
+multiplication(-2, -3, -6).
+false
+
+===
+
+multiplication(0, 0, 0).
+true
+
+multiplication(0, 5, 0).
+true
+
+multiplication(0, -5, 0).
+true
+
+multiplication(0, 5, 1).
+false
+
+multiplication(0, -5, 1).
+false
+
+===
