@@ -1,18 +1,18 @@
-remainder(7, 3, R).
-R = 1.
+remainder(7, 3, Remainder).
+Remainder = 1.
 
-remainder(-7, 3, R).
-R = 2.
+remainder(-7, 3, Remainder).
+Remainder = 2.
 
-remainder(7, -3, R).
-R = 1.
+remainder(7, -3, Remainder).
+Remainder = 1.
 
-remainder(-7, -3, R).
-R = 2.
+remainder(-7, -3, Remainder).
+Remainder = 2.
 
 ===
 
-remainder(7, 0, R).
+remainder(7, 0, Remainder).
 false - dalyba iš nulio negalima
 
 remainder(7, Divisor, 1).
