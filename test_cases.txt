@@ -1,46 +1,22 @@
-multiplication(2, 3, 6).
-true
+remainder(7, 3, R).
+R = 1.
 
-multiplication(3, 2, 6).
-true
+remainder(-7, 3, R).
+R = 2.
 
-multiplication(3, 2, 7).
-false
+remainder(7, -3, R).
+R = 1.
 
-===
-
-multiplication(-2, 3, -6).
-true
-
-multiplication(3, -2, -6).
-true
-
-multiplication(3, -2, 6).
-false
+remainder(-7, -3, R).
+R = 2.
 
 ===
 
-multiplication(-2, -3, 6).
-true
+remainder(7, 0, R).
+false - dalyba iš nulio negalima
 
-multiplication(-2, -3, -6).
-false
+remainder(7, Divisor, 1).
+false / error - nėra nurodytas daliklis
 
-===
-
-multiplication(0, 0, 0).
-true
-
-multiplication(0, 5, 0).
-true
-
-multiplication(0, -5, 0).
-true
-
-multiplication(0, 5, 1).
-false
-
-multiplication(0, -5, 1).
-false
-
-===
+remainder(Dividend, 3, 1).
+false / error - nėra nurodytas daliklis

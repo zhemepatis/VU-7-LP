@@ -2,23 +2,22 @@
 % Informatika 4 k., 2 gr.
 % Variantas: 5.3
 
-% daugyba
-multiplication(1, Multiplier, Multiplier).
+remainder(Dividend, Divisor, Remainder) :-
+    Divisor \= 0,
+    IDivisor is abs(Divisor),
+    remainder_helper(Dividend, IDivisor, Remainder).
 
-multiplication(Multiplier1, Multiplier2, Product) :- 
-    Multiplier1 > 1,
-    IMultiplier is (Multiplier1 - 1),
-    IProduct is (Product - Multiplier2),
-    multiplication(IMultiplier, Multiplier2, IProduct).
+remainder_helper(Dividend, Divisor, Remainder) :- 
+    Dividend >= 0,
+    Dividend < Divisor, 
+    Remainder = Dividend.
 
-multiplication(Multiplier1, Multiplier2, Product) :- 
-    Multiplier1 < 1,
-    IMultiplier is (Multiplier1 + 1),
-    IProduct is (Product + Multiplier2),
-    multiplication(IMultiplier, Multiplier2, IProduct).
+remainder_helper(Dividend, Divisor, Remainder) :- 
+    Dividend >= Divisor,
+    IDifference is (Dividend - Divisor),
+    remainder_helper(IDifference, Divisor, Remainder).
 
-% sveikųjų skaičių dalybos liekana
-remainder(Dividend, Divisor, Remainder) :- 
-    multiplication(Divisor, _, Product),
-    ISum is Product + Remainder,
-    ISum == Dividend.
+remainder_helper(Dividend, Divisor, Remainder) :- 
+    Dividend < 0,
+    ISum is (Dividend + Divisor),
+    remainder_helper(ISum, Divisor, Remainder).
