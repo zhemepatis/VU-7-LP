@@ -2,19 +2,19 @@
 % Informatika 4 k., 2 gr.
 % Variantas: 1.4
 
-% keliai
-kelias(vilnius, utena, 112).
-kelias(vilnius, kaunas, 105).
-kelias(vilnius, panevezys, 137).
-kelias(vilnius, alytus, 109).
+% tracks
+track(vilnius, utena, 112).
+track(vilnius, kaunas, 105).
+track(vilnius, panevezys, 137).
+track(vilnius, alytus, 109).
 
-kelias(kaunas, marijampole, 64).
-kelias(kaunas, siauliai, 149).
-kelias(kaunas, klaipeda, 216).
-kelias(kaunas, utena, 139).
+track(kaunas, marijampole, 64).
+track(kaunas, siauliai, 149).
+track(kaunas, klaipeda, 216).
+track(kaunas, utena, 139).
 
-kelias(siauliai, panevezys, 91).
+track(siauliai, panevezys, 91).
 
-% predikatai
-galima_pasiekti(M1, M2, L) :- kelias(M1, M2, A), A =< L.
-galima_pasiekti(M1, M2, L) :- kelias(M1, MT, AT), AT =< L, galima_pasiekti(MT, M2, L).
+% predicates
+can_be_reached(City1, City2, Restriction) :- track(City1, City2, Distance), Distance =< Restriction.
+can_be_reached(City1, City2, Restriction) :- track(City1, ICity, IDistance), IDistance =< Restriction, can_be_reached(ICity, City2, Restriction).
