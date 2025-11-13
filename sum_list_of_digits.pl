@@ -4,6 +4,8 @@ sum(Digits1, Digits2, SumDigits) :-
     sum_digits(ReversedDigits1, ReversedDigits2, 0, ReversedSumDigits),
     reverse_list(ReversedSumDigits, SumDigits).
 
+% helper function to sum digits
+
 sum_digits([], [], 0, []).
 sum_digits([], [], Carry, [Carry]) :- Carry > 0.
 
@@ -24,6 +26,8 @@ sum_digits([Head1 | Tail1], [Head2 | Tail2], Carry, [IDigit | IResult]) :-
     IDigit is ISum mod 10,
     ICarry is ISum // 10,
     sum_digits(Tail1, Tail2, ICarry, IResult).
+
+% helper function to reverse list
 
 reverse_list(List, Reversed) :- reverse_list_helper(List, [], Reversed).
 
