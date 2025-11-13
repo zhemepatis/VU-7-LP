@@ -1,1 +1,14 @@
-TODO
+first_n_elements([a], 0, Result).
+Result = [].
+
+first_n_elements([a], 1, Result).
+Result = [a].
+
+first_n_elements([a, b], 1, Result).
+Result = [a].
+
+first_n_elements([a, b], 2, Result).
+Result = [a, b].
+
+first_n_elements([a, b], 3, Result).
+false
