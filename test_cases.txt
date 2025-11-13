@@ -1,1 +1,20 @@
-TODO
+swap([a, b, c], [p(a, x), p(c, y)], Result).
+Result = [x, b, y].
+
+swap([a, b, c], [], Result).
+Result = [a, b, c].
+
+swap([], [], Result).
+Result = [].
+
+swap([], [p(a, x), p(c, y)], Result).
+Result = [].
+
+swap([a, b, c], [p(a, a), p(b, b), p(c, c)], Result).
+Result = [a, b, c].
+
+swap([a, b, c], [p(a, b), p(b, c), p(c, a)], Result).
+Result = [b, c, a].
+
+swap([a, b, c], [p(a, x), p(a, y), p(c, z)], Result).
+Result = [x, b, z].

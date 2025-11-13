@@ -4,9 +4,11 @@ swap([OriginalElement | OriginalTail], PermutationsList, [PermutedElement | Perm
     apply_permutation(OriginalElement, PermutationsList, PermutedElement), 
     swap(OriginalTail, PermutationsList, PermutationsTail).
 
-apply_permutation(OriginalElement, [], OriginalElement).
-apply_permutation(OriginalElement, [k(OriginalElement, PermutedElement) | _], PermutedElement).
+% helper function for applying permutations
 
-apply_permutation(OriginalElement, [k(X, _) | Tail], PermutedElement) :-
+apply_permutation(OriginalElement, [], OriginalElement).
+apply_permutation(OriginalElement, [p(OriginalElement, PermutedElement) | _], PermutedElement).
+
+apply_permutation(OriginalElement, [p(X, _) | Tail], PermutedElement) :-
     OriginalElement \= X, 
     apply_permutation(OriginalElement, Tail, PermutedElement).
